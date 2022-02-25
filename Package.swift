@@ -46,16 +46,19 @@ let package = Package(
                     .target(name: "AdvancedAnnotationsTarget"),
                     .target(name: "Multiparty"),
                     .target(name: "SCWormhole")
-                ]),
+                ],
+                path: ""),
         .target(name: "MediaCaptureTarget",
                 dependencies: [
                     .target(name: "MediaCapture"),
                     .target(name: "Permissions")
-                ]),
+                ],
+                path: ""),
         .target(name: "AdvancedAnnotationsTarget",
                 dependencies: [
                     .target(name: "AdvancedAnnotations"),
                     "SVGgh"
-                ])
+                ],
+                path: "")
     ]
 )
