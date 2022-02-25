@@ -18,6 +18,21 @@ let package = Package(
     targets: [
         .binaryTarget(name: "LSUniversalSDK",
                       url: "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK/3.8.0-alpha3/sdk.zip",
+                      checksum: "00da08bf7592a95933fd01966e7bae9f85d5fcd12772092518b74fc83619e962"),
+        .binaryTarget(name: "LiveTranslation",
+                      url: "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK/3.8.0-alpha3/sdk.zip",
+                      checksum: "00da08bf7592a95933fd01966e7bae9f85d5fcd12772092518b74fc83619e962"),
+        .binaryTarget(name: "MediaCapture",
+                      url: "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK/3.8.0-alpha3/sdk.zip",
+                      checksum: "00da08bf7592a95933fd01966e7bae9f85d5fcd12772092518b74fc83619e962"),
+        .binaryTarget(name: "AdvancedAnnotations",
+                      url: "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK/3.8.0-alpha3/sdk.zip",
+                      checksum: "00da08bf7592a95933fd01966e7bae9f85d5fcd12772092518b74fc83619e962"),
+        .binaryTarget(name: "Multiparty",
+                      url: "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK/3.8.0-alpha3/sdk.zip",
+                      checksum: "00da08bf7592a95933fd01966e7bae9f85d5fcd12772092518b74fc83619e962"),
+        .binaryTarget(name: "SCWormhole",
+                      url: "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK/3.8.0-alpha3/sdk.zip",
                       checksum: "00da08bf7592a95933fd01966e7bae9f85d5fcd12772092518b74fc83619e962")
     ]
 )
