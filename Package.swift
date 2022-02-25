@@ -8,7 +8,7 @@ let package = Package(
     products: [
         .library(
             name: "LSUniversalSDK",
-            targets: ["LSUniversalSDKTarget"]
+            targets: ["LSUniversalSDK"]
         )
     ],
     dependencies: [
@@ -37,28 +37,6 @@ let package = Package(
                       checksum: "a94feb815eea58626d601a9442c356aa9fd636c3b545505829518dde80b3d4ef"),
         .binaryTarget(name: "Permissions",
                       url: "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK/3.8.0-alpha3/Permissions.xcframework.zip",
-                      checksum: "9f22c826b2f1655a3df94bd08db2890c68b8eedbf0c4c02aed4dd73c297a9d2e"),
-        .target(name: "LSUniversalSDKTarget",
-                dependencies: [
-                    .target(name: "LSUniversalSDK"),
-                    .target(name: "LiveTranslation"),
-                    .target(name: "MediaCaptureTarget"),
-                    .target(name: "AdvancedAnnotationsTarget"),
-                    .target(name: "Multiparty"),
-                    .target(name: "SCWormhole")
-                ],
-                path: ""),
-        .target(name: "MediaCaptureTarget",
-                dependencies: [
-                    .target(name: "MediaCapture"),
-                    .target(name: "Permissions")
-                ],
-                path: ""),
-        .target(name: "AdvancedAnnotationsTarget",
-                dependencies: [
-                    .target(name: "AdvancedAnnotations"),
-                    "SVGgh"
-                ],
-                path: "")
+                      checksum: "9f22c826b2f1655a3df94bd08db2890c68b8eedbf0c4c02aed4dd73c297a9d2e")
     ]
 )
