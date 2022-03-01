@@ -47,7 +47,7 @@ let package = Package(
                     .target(name: "Multiparty"),
 //                    .target(name: "SCWormhole")
                 ],
-               path: "LSUniversalSDKTarget"),
+               path: ""),
 //        .target(name: "MediaCaptureTarget",
 //                dependencies: [
 //                    .target(name: "MediaCapture"),
@@ -59,6 +59,6 @@ let package = Package(
                     .target(name: "AdvancedAnnotations"),
                     "SVGgh"
                 ],
-               path: "AdvancedAnnotationsTarget")
+               path: "")
     ]
 )
