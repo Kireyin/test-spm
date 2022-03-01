@@ -56,7 +56,7 @@ let package = Package(
                     .target(name: "MediaCapture"),
                     .target(name: "Permissions")
                 ],
-                path: ""),
+                path: "MediaCaptureWrapper"),
         .target(name: "AdvancedAnnotationsWrapper",
                 dependencies: [
                     .target(name: "AdvancedAnnotations"),
