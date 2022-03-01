@@ -2,6 +2,9 @@
 
 import PackageDescription
 
+let packageUrl = "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK"
+let packageVersion = "3.9.0.alpha.1"
+
 let package = Package(
     name: "LSUniversalSDK",
     platforms: [.iOS(.v13)],
@@ -18,42 +21,42 @@ let package = Package(
     ],
     targets: [
         .binaryTarget(name: "LSUniversalSDK",
-                      url: "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK/3.8.0/LSUniversalSDK.xcframework.zip",
-                      checksum: "cd50cb7e44e324fff194cd725919ce2293f5fd772d79dcd01e1f2c2324de58d0"),
+                      url: "\(packageUrl)/\(packageVersion)/LSUniversalSDK.xcframework.zip",
+                      checksum: "b4f987a34df5da51e8df6cc59c4b9dbfeb02ec90aee434c2b7c1839552bdaaa3"),
         .binaryTarget(name: "LiveTranslation",
-                      url: "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK/3.8.0/LiveTranslation.xcframework.zip",
-                      checksum: "b84b73489a74d9f34c681cf24399bb912d68a802c49cff659a53da5c2513b823"),
-//        .binaryTarget(name: "MediaCapture",
-//                      url: "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK/3.8.0/MediaCapture.xcframework.zip",
-//                      checksum: "12a105e957117d4c0468ca076b01058f38ae35ff80dc2d6d698cdc07f915b5b9"),
+                      url: "\(packageUrl)/\(packageVersion)/LiveTranslation.xcframework.zip",
+                      checksum: "8aa079fd3e7b6dfd2877ec918edc9ccc12fe491bb8d145d1a0c2b57c942e9f34"),
+        .binaryTarget(name: "MediaCapture",
+                      url: "\(packageUrl)/\(packageVersion)/MediaCapture.xcframework.zip",
+                      checksum: "fe53af89129c67ba74324718f06f5b0364283784c24aec509d8db273ae9a32be"),
         .binaryTarget(name: "AdvancedAnnotations",
-                      url: "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK/3.8.0/AdvancedAnnotations.xcframework.zip",
-                      checksum: "a49658fdae107704863690735be6e566692c3c26aa1bb76b130314f976a8ab17"),
+                      url: "\(packageUrl)/\(packageVersion)/AdvancedAnnotations.xcframework.zip",
+                      checksum: "23f98d1dc3c205804c71c1838a1ae0f2768f9b04a1d123970ea11c64e13422fd"),
         .binaryTarget(name: "Multiparty",
-                      url: "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK/3.8.0/Multiparty.xcframework.zip",
-                      checksum: "02a77d1d2f9dc40a336b0ae0ce46f6b6a472e10a38feae87021e21b048628691"),
-//        .binaryTarget(name: "SCWormhole",
-//                      url: "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK/3.8.0/SCWormhole.xcframework.zip",
-//                      checksum: "a94feb815eea58626d601a9442c356aa9fd636c3b545505829518dde80b3d4ef"),
-//        .binaryTarget(name: "Permissions",
-//                      url: "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK/3.8.0/Permissions.xcframework.zip",
-//                      checksum: "9f22c826b2f1655a3df94bd08db2890c68b8eedbf0c4c02aed4dd73c297a9d2e"),
+                      url: "\(packageUrl)/\(packageVersion)/Multiparty.xcframework.zip",
+                      checksum: "48ae046ea1710d8b26263b05051d369a46e848316150b89de68930de4ea52f27"),
+        .binaryTarget(name: "SCWormhole",
+                      url: "\(packageUrl)/\(packageVersion)/SCWormhole.xcframework.zip",
+                      checksum: "40293b2d7daab65103047e982f084ee916b80f5e5b0370a32375d82d90a860e2"),
+        .binaryTarget(name: "Permissions",
+                      url: "\(packageUrl)/\(packageVersion)/Permissions.xcframework.zip",
+                      checksum: "111ba67d740c653d570b6fce3b24619e8d16f91df944077d282040f11bc7d68e"),
         .target(name: "LSUniversalSDKWrapper",
                 dependencies: [
                     .target(name: "LSUniversalSDK"),
                     .target(name: "LiveTranslation"),
-//                    .target(name: "MediaCaptureTarget"),
+                    .target(name: "MediaCaptureWrapper"),
                     .target(name: "AdvancedAnnotationsWrapper"),
                     .target(name: "Multiparty"),
-//                    .target(name: "SCWormhole")
+                    .target(name: "SCWormhole")
                 ],
                path: "LSUniversalSDKWrapper"),
-//        .target(name: "MediaCaptureTarget",
-//                dependencies: [
-//                    .target(name: "MediaCapture"),
-//                    .target(name: "Permissions")
-//                ],
-//                path: ""),
+        .target(name: "MediaCaptureWrapper",
+                dependencies: [
+                    .target(name: "MediaCapture"),
+                    .target(name: "Permissions")
+                ],
+                path: ""),
         .target(name: "AdvancedAnnotationsWrapper",
                 dependencies: [
                     .target(name: "AdvancedAnnotations"),
