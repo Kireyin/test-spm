@@ -43,7 +43,7 @@ let package = Package(
                     .target(name: "LSUniversalSDK"),
                     .target(name: "LiveTranslation"),
 //                    .target(name: "MediaCaptureTarget"),
-                    .target(name: "AdvancedAnnotationsTarget"),
+                    .target(name: "AdvancedAnnotationsWrapper"),
                     .target(name: "Multiparty"),
 //                    .target(name: "SCWormhole")
                 ],
