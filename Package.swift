@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.4
 
 import PackageDescription
 
@@ -11,7 +11,6 @@ let package = Package(
     products: [
         .library(
             name: "LSUniversalSDK",
-            type: .dynamic,
             targets: ["LSUniversalSDKWrapper"]
         )
     ],
