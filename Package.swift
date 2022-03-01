@@ -50,7 +50,7 @@ let package = Package(
                     .target(name: "Multiparty"),
                     .target(name: "SCWormhole"),
                     "AFNetworking",
-                    "libPhoneNumber"
+                    .product(name: "libPhoneNumber", package: "libPhoneNumber-iOS")
                 ],
                path: "LSUniversalSDKWrapper"),
         .target(name: "MediaCaptureWrapper",
