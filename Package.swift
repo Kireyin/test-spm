@@ -49,7 +49,7 @@ let package = Package(
                     .target(name: "AdvancedAnnotationsWrapper"),
                     .target(name: "Multiparty"),
                     .target(name: "SCWormhole"),
-                    "AFNetworking",
+                    .product(name: "AFNetworking", package: "AFNetworking"),
                     .product(name: "libPhoneNumber", package: "libPhoneNumber-iOS")
                 ],
                path: "LSUniversalSDKWrapper"),
@@ -62,7 +62,7 @@ let package = Package(
         .target(name: "AdvancedAnnotationsWrapper",
                 dependencies: [
                     .target(name: "AdvancedAnnotations"),
-                    "SVGgh"
+                    .product(name: "SVGgh", package: "SVGgh")
                 ],
                path: "AdvancedAnnotationsWrapper")
     ]
