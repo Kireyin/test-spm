@@ -7,6 +7,7 @@ let packageVersion = "3.9.0.alpha.1"
 
 let package = Package(
     name: "LSUniversalSDK",
+    type: .dynamic,
     platforms: [.iOS(.v13)],
     products: [
         .library(
