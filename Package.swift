@@ -10,7 +10,7 @@ let package = Package(
     platforms: [.iOS(.v13)],
     products: [
         .library(
-            name: "LSUniversalSDK",,
+            name: "LSUniversalSDK",
             type: .dynamic,
             targets: ["LSUniversalSDKWrapper"]
         )
