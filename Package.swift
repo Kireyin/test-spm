@@ -48,7 +48,9 @@ let package = Package(
                     .target(name: "MediaCaptureWrapper"),
                     .target(name: "AdvancedAnnotationsWrapper"),
                     .target(name: "Multiparty"),
-                    .target(name: "SCWormhole")
+                    .target(name: "SCWormhole"),
+                    "AFNetworking",
+                    "libPhoneNumber-iOS"
                 ],
                path: "LSUniversalSDKWrapper"),
         .target(name: "MediaCaptureWrapper",
