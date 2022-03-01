@@ -59,6 +59,6 @@ let package = Package(
                     .target(name: "AdvancedAnnotations"),
                     "SVGgh"
                 ],
-               path: "LSUniversalSDKTarget")
+               path: "AdvancedAnnotationsTarget")
     ]
 )
