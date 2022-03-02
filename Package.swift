@@ -11,7 +11,6 @@ let package = Package(
     products: [
         .library(
             name: "LSUniversalSDK",
-            type: .dynamic,
             targets: ["LSUniversalSDK", "LiveTranslation", "MediaCapture", "AdvancedAnnotations", "Multiparty", "SCWormhole", "Permissions"]
         )
     ],
