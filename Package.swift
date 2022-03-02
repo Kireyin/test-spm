@@ -12,7 +12,7 @@ let package = Package(
         .library(
             name: "LSUniversalSDK",
             type: .dynamic,
-            targets: ["LSUniversalSDK", "LSUniversalSDKWrapper"]
+            targets: ["LSUniversalSDKWrapper"]
         )
     ],
     dependencies: [
@@ -44,16 +44,27 @@ let package = Package(
                       checksum: "111ba67d740c653d570b6fce3b24619e8d16f91df944077d282040f11bc7d68e"),
         .target(name: "LSUniversalSDKWrapper",
                 dependencies: [
+                    .target(name: "LSUniversalSDK"),
                     .target(name: "LiveTranslation"),
-                    .target(name: "MediaCapture"),
-                    .target(name: "AdvancedAnnotations"),
+                    .target(name: "MediaCaptureWrapper"),
+                    .target(name: "AdvancedAnnotationsWrapper"),
                     .target(name: "Multiparty"),
                     .target(name: "SCWormhole"),
-                    .target(name: "Permissions"),
                     .product(name: "AFNetworking", package: "AFNetworking"),
-                    .product(name: "libPhoneNumber", package: "libPhoneNumber-iOS"),
+                    .product(name: "libPhoneNumber", package: "libPhoneNumber-iOS")
+                ],
+               path: "LSUniversalSDKWrapper"),
+        .target(name: "MediaCaptureWrapper",
+                dependencies: [
+                    .target(name: "MediaCapture"),
+                    .target(name: "Permissions")
+                ],
+                path: "MediaCaptureWrapper"),
+        .target(name: "AdvancedAnnotationsWrapper",
+                dependencies: [
+                    .target(name: "AdvancedAnnotations"),
                     .product(name: "SVGgh", package: "SVGgh")
                 ],
-               path: "LSUniversalSDKWrapper")
+               path: "AdvancedAnnotationsWrapper")
     ]
 )
