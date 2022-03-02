@@ -12,7 +12,7 @@ let package = Package(
         .library(
             name: "LSUniversalSDK",
             type: .dynamic,
-            targets: ["LSUniversalSDKWrapper"]
+            targets: ["LSUniversalSDKWrapper", "LiveTranslation", "MediaCaptureWrapper", "AdvancedAnnotationsWrapper", "Multiparty", "SCWormhole"]
         )
     ],
     dependencies: [
@@ -45,11 +45,6 @@ let package = Package(
         .target(name: "LSUniversalSDKWrapper",
                 dependencies: [
                     .target(name: "LSUniversalSDK"),
-                    .target(name: "LiveTranslation"),
-                    .target(name: "MediaCaptureWrapper"),
-                    .target(name: "AdvancedAnnotationsWrapper"),
-                    .target(name: "Multiparty"),
-                    .target(name: "SCWormhole"),
                     .product(name: "AFNetworking", package: "AFNetworking"),
                     .product(name: "libPhoneNumber", package: "libPhoneNumber-iOS")
                 ],
