@@ -6,11 +6,11 @@ let packageUrl = "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK"
 let packageVersion = "3.9.0.alpha.1"
 
 let package = Package(
-    name: "LSUniversalSDK",
+    name: "LSUniversalSDKLib",
     platforms: [.iOS(.v13)],
     products: [
         .library(
-            name: "LSUniversalSDK",
+            name: "LSUniversalSDKLib",
             type: .dynamic,
             targets: ["LSUniversalSDKWrapper"]
         )
@@ -21,7 +21,7 @@ let package = Package(
         .package(url: "https://github.com/Kireyin/SVGgh.git", .branch("master")),
     ],
     targets: [
-        .binaryTarget(name: "LSUniversalSDKBinary",
+        .binaryTarget(name: "LSUniversalSDK",
                       url: "\(packageUrl)/\(packageVersion)/LSUniversalSDK.xcframework.zip",
                       checksum: "b4f987a34df5da51e8df6cc59c4b9dbfeb02ec90aee434c2b7c1839552bdaaa3"),
         .binaryTarget(name: "LiveTranslation",
@@ -44,7 +44,7 @@ let package = Package(
                       checksum: "111ba67d740c653d570b6fce3b24619e8d16f91df944077d282040f11bc7d68e"),
         .target(name: "LSUniversalSDKWrapper",
                 dependencies: [
-                    .target(name: "LSUniversalSDKBinary"),
+                    .target(name: "LSUniversalSDK"),
                     .target(name: "LiveTranslation"),
                     .target(name: "MediaCaptureWrapper"),
                     .target(name: "AdvancedAnnotationsWrapper"),
