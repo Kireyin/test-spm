@@ -11,12 +11,14 @@ let package = Package(
     products: [
         .library(
             name: "LSUniversalSDK",
-            targets: ["LSUniversalSDKWrapper"]
+            type: .dynamic,
+            targets: ["LSUniversalSDK", "LiveTranslation", "MediaCapture", "AdvancedAnnotations", "Multiparty", "SCWormhole", "Permissions"]
         )
     ],
     dependencies: [
         .package(url: "https://github.com/AFNetworking/AFNetworking.git", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/iziz/libPhoneNumber-iOS.git", .upToNextMajor(from: "0.9.0")),
+        .package(url: "https://github.com/Kireyin/SVGgh.git", .branch("master")),
     ],
     targets: [
         .binaryTarget(name: "LSUniversalSDK",
@@ -39,30 +41,6 @@ let package = Package(
                       checksum: "40293b2d7daab65103047e982f084ee916b80f5e5b0370a32375d82d90a860e2"),
         .binaryTarget(name: "Permissions",
                       url: "\(packageUrl)/\(packageVersion)/Permissions.xcframework.zip",
-                      checksum: "111ba67d740c653d570b6fce3b24619e8d16f91df944077d282040f11bc7d68e"),
-        .target(name: "LSUniversalSDKWrapper",
-                dependencies: [
-                    .target(name: "LSUniversalSDK"),
-                    .target(name: "LiveTranslation"),
-                    .target(name: "MediaCaptureWrapper"),
-                    .target(name: "AdvancedAnnotationsWrapper"),
-                    .target(name: "Multiparty"),
-                    .target(name: "SCWormhole"),
-                    .product(name: "AFNetworking", package: "AFNetworking"),
-                    .product(name: "libPhoneNumber", package: "libPhoneNumber-iOS")
-                ],
-               path: "LSUniversalSDKWrapper"),
-        .target(name: "MediaCaptureWrapper",
-                dependencies: [
-                    .target(name: "MediaCapture"),
-                    .target(name: "Permissions")
-                ],
-                path: "MediaCaptureWrapper"),
-        .target(name: "AdvancedAnnotationsWrapper",
-                dependencies: [
-                    .target(name: "AdvancedAnnotations"),
-                    .package(url: "https://github.com/Kireyin/SVGgh.git", .branch("master"))
-                ],
-               path: "AdvancedAnnotationsWrapper")
+                      checksum: "111ba67d740c653d570b6fce3b24619e8d16f91df944077d282040f11bc7d68e")
     ]
 )
