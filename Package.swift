@@ -17,7 +17,6 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/AFNetworking/AFNetworking.git", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/iziz/libPhoneNumber-iOS.git", .upToNextMajor(from: "0.9.0")),
-        .package(url: "https://github.com/Kireyin/SVGgh.git", .branch("master")),
     ],
     targets: [
         .binaryTarget(name: "LSUniversalSDK",
@@ -62,7 +61,7 @@ let package = Package(
         .target(name: "AdvancedAnnotationsWrapper",
                 dependencies: [
                     .target(name: "AdvancedAnnotations"),
-                    .product(name: "SVGgh", package: "SVGgh")
+                    .package(url: "https://github.com/Kireyin/SVGgh.git", .branch("master"))
                 ],
                path: "AdvancedAnnotationsWrapper")
     ]
