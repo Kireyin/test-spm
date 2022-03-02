@@ -45,25 +45,15 @@ let package = Package(
         .target(name: "LSUniversalSDKWrapper",
                 dependencies: [
                     .target(name: "LiveTranslation"),
-                    .target(name: "MediaCaptureWrapper"),
-                    .target(name: "AdvancedAnnotationsWrapper"),
+                    .target(name: "MediaCapture"),
+                    .target(name: "AdvancedAnnotations"),
                     .target(name: "Multiparty"),
                     .target(name: "SCWormhole"),
+                    .target(name: "Permissions"),
                     .product(name: "AFNetworking", package: "AFNetworking"),
-                    .product(name: "libPhoneNumber", package: "libPhoneNumber-iOS")
-                ],
-               path: "LSUniversalSDKWrapper"),
-        .target(name: "MediaCaptureWrapper",
-                dependencies: [
-                    .target(name: "MediaCapture"),
-                    .target(name: "Permissions")
-                ],
-                path: "MediaCaptureWrapper"),
-        .target(name: "AdvancedAnnotationsWrapper",
-                dependencies: [
-                    .target(name: "AdvancedAnnotations"),
+                    .product(name: "libPhoneNumber", package: "libPhoneNumber-iOS"),
                     .product(name: "SVGgh", package: "SVGgh")
                 ],
-               path: "AdvancedAnnotationsWrapper")
+               path: "LSUniversalSDKWrapper")
     ]
 )
