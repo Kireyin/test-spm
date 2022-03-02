@@ -21,7 +21,7 @@ let package = Package(
         .package(url: "https://github.com/Kireyin/SVGgh.git", .branch("master")),
     ],
     targets: [
-        .binaryTarget(name: "LSUniversalSDK",
+        .binaryTarget(name: "LSUniversalSDKBinary",
                       url: "\(packageUrl)/\(packageVersion)/LSUniversalSDK.xcframework.zip",
                       checksum: "b4f987a34df5da51e8df6cc59c4b9dbfeb02ec90aee434c2b7c1839552bdaaa3"),
         .binaryTarget(name: "LiveTranslation",
@@ -44,7 +44,7 @@ let package = Package(
                       checksum: "111ba67d740c653d570b6fce3b24619e8d16f91df944077d282040f11bc7d68e"),
         .target(name: "LSUniversalSDKWrapper",
                 dependencies: [
-                    .target(name: "LSUniversalSDK"),
+                    .target(name: "LSUniversalSDKBinary"),
                     .target(name: "LiveTranslation"),
                     .target(name: "MediaCaptureWrapper"),
                     .target(name: "AdvancedAnnotationsWrapper"),
