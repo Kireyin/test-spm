@@ -6,11 +6,11 @@ let packageUrl = "https://sightcall-ios-cocoapods.s3.amazonaws.com/universalSDK"
 let packageVersion = "3.9.0.alpha.1"
 
 let package = Package(
-    name: "LSUniversalSDKLib",
+    name: "LSUniversalSDK",
     platforms: [.iOS(.v13)],
     products: [
         .library(
-            name: "LSUniversalSDKLib",
+            name: "LSUniversalSDK",
             type: .dynamic,
             targets: ["LSUniversalSDKWrapper"]
         )
